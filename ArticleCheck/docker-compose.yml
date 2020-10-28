@@ -1,0 +1,95 @@
+version: "3.7"
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis
+    
+    networks:
+      - internal
+    ports:
+      - 6379:6379
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-data:/data
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: redis-commander
+    
+    networks:
+      - internal
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+      - HTTP_USER=root
+      - HTTP_PASSWORD=qwerty
+    ports:
+      - 8081:8081
+    depends_on:
+      - redis
+
+  mssql:
+    image: "mcr.microsoft.com/mssql/server"
+    container_name: mssql
+    command: /bin/bash ./entrypoint.sh
+    ports:
+      - 1433:1433
+      
+    networks:
+      - internal
+    environment:
+        SA_PASSWORD: "SomeStrongP@ssw0rd!"
+        ACCEPT_EULA: "Y"
+        MSSQL_PID: "Developer"
+    volumes:
+      - mssql-data:/var/opt/mssql
+      - ./docker/mssql/docker-entrypoint.sh:/entrypoint.sh
+      - ./docker/mssql/docker-db-init.sh:/db-init.sh
+      - ./docker/mssql/setup.sql:/setup.sql
+   
+  app:
+    build: 
+      context: .
+      dockerfile: ./ArticleCheck.Api/Dockerfile
+    container_name: app
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Container
+
+    networks:
+      - internal
+    ports:
+      - 8000:80
+    links:
+      - redis
+      - mssql
+    depends_on:
+      - redis
+      - mssql
+
+  tests:
+    image: "mcr.microsoft.com/dotnet/core/sdk:3.1"
+    container_name: tests
+    tty: true
+    
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Container
+    
+    networks:
+      - internal
+      
+    links:
+      - redis
+      - mssql
+    depends_on:
+      - redis
+      - mssql
+    
+    volumes:
+      - .:/app
+
+networks:
+  internal:
+  
+volumes:
+  redis-data:
+  mssql-data:

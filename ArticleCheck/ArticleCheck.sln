@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticleCheck.Api", "ArticleCheck.Api\ArticleCheck.Api.csproj", "{A7C03FAE-5A8F-4A58-937D-32BE0DC535ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticleCheck.Infrastructure", "ArticleCheck.Infrastructure\ArticleCheck.Infrastructure.csproj", "{497554C8-A9C6-44EC-A4A7-4BA2791EAA07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArticleCheck.Core", "ArticleCheck.Core\ArticleCheck.Core.csproj", "{7E4CA066-DC1E-4306-A65C-9F4006CC2669}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{45C75FF9-CFDC-4370-B6F0-4EFBC795FAAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticleCheck.Domain", "ArticleCheck.Domain\ArticleCheck.Domain.csproj", "{660D6EF6-9EEC-4846-BD01-5BD0B3022BBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticleCheck.UnitTests", "ArticleCheck.UnitTests\ArticleCheck.UnitTests.csproj", "{4C94221D-7CC0-4378-9244-17B1E4DAB2A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticleCheck.IntegrationTests", "ArticleCheck.IntegrationTests\ArticleCheck.IntegrationTests.csproj", "{305B2A79-54F1-42FC-A80A-7D722F8DC780}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7C03FAE-5A8F-4A58-937D-32BE0DC535ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7C03FAE-5A8F-4A58-937D-32BE0DC535ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7C03FAE-5A8F-4A58-937D-32BE0DC535ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C03FAE-5A8F-4A58-937D-32BE0DC535ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{497554C8-A9C6-44EC-A4A7-4BA2791EAA07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{497554C8-A9C6-44EC-A4A7-4BA2791EAA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{497554C8-A9C6-44EC-A4A7-4BA2791EAA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{497554C8-A9C6-44EC-A4A7-4BA2791EAA07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E4CA066-DC1E-4306-A65C-9F4006CC2669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E4CA066-DC1E-4306-A65C-9F4006CC2669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E4CA066-DC1E-4306-A65C-9F4006CC2669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E4CA066-DC1E-4306-A65C-9F4006CC2669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{660D6EF6-9EEC-4846-BD01-5BD0B3022BBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{660D6EF6-9EEC-4846-BD01-5BD0B3022BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{660D6EF6-9EEC-4846-BD01-5BD0B3022BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{660D6EF6-9EEC-4846-BD01-5BD0B3022BBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C94221D-7CC0-4378-9244-17B1E4DAB2A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C94221D-7CC0-4378-9244-17B1E4DAB2A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C94221D-7CC0-4378-9244-17B1E4DAB2A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C94221D-7CC0-4378-9244-17B1E4DAB2A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{305B2A79-54F1-42FC-A80A-7D722F8DC780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{305B2A79-54F1-42FC-A80A-7D722F8DC780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{305B2A79-54F1-42FC-A80A-7D722F8DC780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{305B2A79-54F1-42FC-A80A-7D722F8DC780}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C94221D-7CC0-4378-9244-17B1E4DAB2A1} = {45C75FF9-CFDC-4370-B6F0-4EFBC795FAAB}
+		{305B2A79-54F1-42FC-A80A-7D722F8DC780} = {45C75FF9-CFDC-4370-B6F0-4EFBC795FAAB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F9DCA31-9FBD-4901-BD6F-5FD17C110DA7}
+	EndGlobalSection
+EndGlobal
